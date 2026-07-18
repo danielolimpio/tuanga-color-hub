@@ -23,6 +23,8 @@ jobs:
 
       - name: Build do projeto
         run: npm run build
+        env:
+          HOSTINGER_STATIC: "true"
 
       - name: Mostrar arquivos gerados
         run: ls -la dist/

@@ -374,6 +374,7 @@ export const formatDate = (iso: string) =>
     year: "numeric",
     month: "short",
     day: "numeric",
+    timeZone: "UTC",
   });
 
 export const formatViews = (n: number) =>
