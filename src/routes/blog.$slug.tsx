@@ -127,7 +127,7 @@ function ArticlePage() {
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_320px]">
           <div className="prose prose-neutral max-w-none">
-            {article.content.map((p, i) => (
+            {article.content.map((p: string, i: number) => (
               <p
                 key={i}
                 className="mb-5 text-[17px] leading-relaxed text-foreground/90"
@@ -158,7 +158,7 @@ function ArticlePage() {
           <section className="mt-16">
             <h2 className="font-display text-3xl mb-6">Related in {category.name}</h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {related.map((a) => (
+              {related.map((a: any) => (
                 <ArticleCard key={a.slug} article={a} size="md" />
               ))}
             </div>

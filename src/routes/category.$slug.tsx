@@ -73,7 +73,7 @@ function CategoryPage() {
         <div className="space-y-8">
           {hero && <ArticleCard article={hero} size="hero" />}
           <div className="grid gap-6 sm:grid-cols-2">
-            {rest.map((a) => (
+            {rest.map((a: any) => (
               <ArticleCard key={a.slug} article={a} size="md" />
             ))}
           </div>
