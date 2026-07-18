@@ -239,6 +239,7 @@ function HomePage() {
           </p>
           <form className="mt-6 mx-auto flex max-w-md flex-col sm:flex-row gap-2">
             <input
+              aria-label="Your email address"
               type="email"
               placeholder="Your email address"
               className="flex-1 rounded-full bg-white/10 px-4 py-3 text-sm placeholder:text-white/50 ring-1 ring-white/20 outline-none focus:ring-white/60"

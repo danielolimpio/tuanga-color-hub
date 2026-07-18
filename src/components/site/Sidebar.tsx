@@ -52,6 +52,7 @@ export function Sidebar() {
         </p>
         <form className="mt-4 flex flex-col gap-2">
           <input
+            aria-label="Your email address"
             type="email"
             placeholder="you@company.com"
             className="rounded-full bg-white/10 px-4 py-2 text-sm placeholder:text-white/50 outline-none ring-1 ring-white/20 focus:ring-white/60"

@@ -24,15 +24,18 @@ export const Route = createFileRoute("/contact")({
         </p>
         <form className="space-y-4">
           <input
+            aria-label="Your name"
             className="w-full rounded-xl border border-border bg-card px-4 py-3"
             placeholder="Your name"
           />
           <input
+            aria-label="Email"
             type="email"
             className="w-full rounded-xl border border-border bg-card px-4 py-3"
             placeholder="Email"
           />
           <textarea
+            aria-label="Message"
             rows={6}
             className="w-full rounded-xl border border-border bg-card px-4 py-3"
             placeholder="Message"
