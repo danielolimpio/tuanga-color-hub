@@ -34,12 +34,12 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "Tuanga Cor — B2B SaaS Reviews for Small Business",
+        content: "Tuanga Cor — B2B SaaS Reviews for Small Business (CRM, Marketing, Finance)",
       },
       {
         property: "og:description",
         content:
-          "The color of clarity for SMB software: honest reviews, side-by-side comparisons, and setup guides.",
+          "Independent SMB SaaS reviews and comparisons. Find the best CRM, marketing, finance, productivity and e-commerce tools for your small business.",
       },
     ],
   }),
