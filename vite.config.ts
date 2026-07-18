@@ -6,17 +6,64 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+const isHostingerStaticBuild = process.env.HOSTINGER_STATIC === "true";
+
+const categorySlugs = ["crm", "marketing", "finance", "productivity", "e-commerce"];
+
+const articleSlugs = [
+  "best-crm-for-small-business-2026",
+  "hubspot-vs-pipedrive-comparison",
+  "crm-for-real-estate-agents",
+  "best-email-marketing-software-small-business",
+  "marketing-automation-tools-comparison",
+  "seo-tools-for-agencies",
+  "best-accounting-software-for-freelancers",
+  "invoicing-tools-for-small-business",
+  "payroll-software-comparison",
+  "best-project-management-software-small-teams",
+  "task-management-tools-comparison",
+  "collaboration-platforms-remote-work",
+  "best-ecommerce-platform-small-business",
+  "shopify-vs-woocommerce-comparison",
+  "payment-gateway-for-startups",
+];
+
+const staticPages = [
+  "/",
+  "/about",
+  "/contact",
+  "/sitemap.xml",
+  ...categorySlugs.map((slug) => `/category/${slug}`),
+  ...articleSlugs.map((slug) => `/blog/${slug}`),
+].map((path) => ({ path }));
+
 export default defineConfig({
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+    ...(isHostingerStaticBuild
+      ? {
+          pages: staticPages,
+          prerender: {
+            enabled: true,
+            autoStaticPathsDiscovery: false,
+            crawlLinks: true,
+            failOnError: true,
+          },
+        }
+      : {}),
   },
-  // Outside Lovable (e.g. GitHub Actions building for Hostinger static hosting),
-  // build a fully static site into ./dist so it can be uploaded via FTP.
-  nitro: {
-    preset: "static",
-    output: { dir: "dist", publicDir: "dist" },
-  },
+  // Hostinger shared hosting needs plain static files. Disable the server deploy
+  // bundler only in GitHub Actions and emit the browser/prerendered output into ./dist.
+  nitro: isHostingerStaticBuild ? false : undefined,
+  vite: isHostingerStaticBuild
+    ? {
+        environments: {
+          client: { build: { outDir: "dist" } },
+          ssr: { build: { outDir: ".tanstack/server" } },
+        },
+      }
+    : undefined,
 });
 
