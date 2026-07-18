@@ -12,4 +12,11 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Outside Lovable (e.g. GitHub Actions building for Hostinger static hosting),
+  // build a fully static site into ./dist so it can be uploaded via FTP.
+  nitro: {
+    preset: "static",
+    output: { dir: "dist", publicDir: "dist" },
+  },
 });
+
