@@ -1,0 +1,32 @@
+# Tuanga Cor
+
+> B2B SaaS reviews, comparisons, and practical guides for small businesses exploring CRM, marketing, finance, productivity, and e-commerce tools.
+
+Tuanga Cor is an English-language blog dedicated to helping small and medium-sized businesses choose the right software. We publish in-depth reviews, how-to guides, and curated lists across five core categories: CRM & Sales, Marketing & Automation, Finance & Accounting, Productivity & Project Management, and E-commerce & Online Sales.
+
+## Pages
+
+- [Home](/): Latest B2B SaaS reviews, featured articles, and trending tools for small businesses.
+- [About](/about): Learn about Tuanga Cor, our mission, and how we help SMBs find the right software.
+- [Contact](/contact): Get in touch with the Tuanga Cor team for questions, partnerships, or feedback.
+
+## Categories
+
+- [CRM & Sales Tools](/category/crm): Reviews and guides on CRM platforms, sales pipelines, and customer relationship software.
+- [Marketing & Automation](/category/marketing): Email marketing, automation workflows, lead generation, and growth tools.
+- [Finance & Accounting](/category/finance): Accounting, invoicing, bookkeeping, and financial management software for SMBs.
+- [Productivity & Project Management](/category/productivity): Task management, collaboration, and project planning tools.
+- [E-commerce & Online Sales](/category/e-commerce): E-commerce platforms, online store builders, and sales channel tools.
+
+## Examples
+
+- [Best CRM Software for Small Business](/blog/best-crm-software-small-business): A curated comparison of CRM platforms for SMBs.
+- [Email Marketing Tools for Small Business](/blog/email-marketing-tools-small-business): Top email marketing and automation solutions.
+- [Best Accounting Software for Small Business](/blog/best-accounting-software-small-business): Finance and accounting software picks.
+- [Top Project Management Tools for Small Teams](/blog/top-project-management-tools-small-teams): Productivity and project management reviews.
+- [Best E-commerce Platforms for Small Business](/blog/best-ecommerce-platforms-small-business): E-commerce platform comparisons for online sellers.
+
+## Optional
+
+- [Sitemap](/sitemap.xml): Machine-readable sitemap of all public pages and articles.
+- [Robots](/robots.txt): Crawler instructions for search engines.
