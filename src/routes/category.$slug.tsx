@@ -16,14 +16,16 @@ export const Route = createFileRoute("/category/$slug")({
       return { meta: [{ title: "Category not found" }, { name: "robots", content: "noindex" }] };
     }
     const { cat } = loaderData;
+    const url = `https://tuangacor.com/category/${cat.slug}`;
     return {
       meta: [
-        { title: `${cat.name} — ${cat.tagline} | Tuanga Cor` },
+        { title: `${cat.name} — ${cat.tagline}` },
         { name: "description", content: cat.description },
+        { property: "og:url", content: url },
         { property: "og:title", content: `${cat.name} — ${cat.tagline}` },
         { property: "og:description", content: cat.description },
-        { rel: "canonical", href: `/category/${cat.slug}` },
       ],
+      links: [{ rel: "canonical", href: url }],
     };
   },
   component: CategoryPage,
