@@ -268,7 +268,7 @@ export const articles: Article[] = [
   },
   {
     slug: "task-management-tools-comparison",
-    title: "Task Management Tools Comparison: Todoist vs TickTick vs Things",
+    title: "Task Management Tools: Todoist vs TickTick vs Things",
     excerpt:
       "Personal productivity apps that scale to small teams — a hands-on look at speed, sync, and cost.",
     category: "productivity",
