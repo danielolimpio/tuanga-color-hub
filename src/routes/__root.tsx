@@ -92,6 +92,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Independent SMB SaaS reviews and comparisons. Find the best CRM, marketing, finance, productivity and e-commerce tools for your small business.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://tuangacor.com/" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Tuanga Cor — B2B SaaS Reviews for Small Business" },
       { name: "twitter:description", content: "Independent SMB SaaS reviews and comparisons. Find the best CRM, marketing, finance, productivity and e-commerce tools for your small business." },
