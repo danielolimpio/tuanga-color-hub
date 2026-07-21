@@ -29,11 +29,13 @@ export const Route = createFileRoute("/blog/$slug")({
       };
     }
     const { article, category } = loaderData;
+    const url = `https://tuangacor.com/blog/${article.slug}`;
     return {
       meta: [
-        { title: `${article.title} | Tuanga Cor` },
+        { title: article.title },
         { name: "description", content: article.excerpt },
         { property: "og:type", content: "article" },
+        { property: "og:url", content: url },
         { property: "og:title", content: article.title },
         { property: "og:description", content: article.excerpt },
         { property: "og:image", content: article.cover },
@@ -41,6 +43,7 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "article:published_time", content: article.date },
         { name: "twitter:image", content: article.cover },
       ],
+      links: [{ rel: "canonical", href: url }],
       scripts: [
         {
           type: "application/ld+json",
