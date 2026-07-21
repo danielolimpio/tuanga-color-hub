@@ -12,7 +12,9 @@ export const Route = createFileRoute("/contact")({
       },
       { property: "og:title", content: "Contact Tuanga Cor" },
       { property: "og:description", content: "Reach the Tuanga Cor editorial team." },
+      { property: "og:url", content: "https://tuangacor.com/contact" },
     ],
+    links: [{ rel: "canonical", href: "https://tuangacor.com/contact" }],
   }),
   component: () => (
     <div className="min-h-screen bg-background">

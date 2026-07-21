@@ -16,7 +16,9 @@ export const Route = createFileRoute("/about")({
         property: "og:description",
         content: "Independent reviews of SMB SaaS you can trust.",
       },
+      { property: "og:url", content: "https://tuangacor.com/about" },
     ],
+    links: [{ rel: "canonical", href: "https://tuangacor.com/about" }],
   }),
   component: () => (
     <div className="min-h-screen bg-background">

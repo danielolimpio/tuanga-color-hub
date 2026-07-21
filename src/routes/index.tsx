@@ -23,25 +23,9 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      {
-        title:
-          "Tuanga Cor — B2B SaaS Reviews for Small Business (CRM, Marketing, Finance)",
-      },
-      {
-        name: "description",
-        content:
-          "Independent SMB SaaS reviews and comparisons. Find the best CRM, marketing, finance, productivity and e-commerce tools for your small business.",
-      },
-      {
-        property: "og:title",
-        content: "Tuanga Cor — B2B SaaS Reviews for Small Business (CRM, Marketing, Finance)",
-      },
-      {
-        property: "og:description",
-        content:
-          "Independent SMB SaaS reviews and comparisons. Find the best CRM, marketing, finance, productivity and e-commerce tools for your small business.",
-      },
+      { property: "og:url", content: "https://tuangacor.com/" },
     ],
+    links: [{ rel: "canonical", href: "https://tuangacor.com/" }],
   }),
   component: HomePage,
 });
