@@ -221,7 +221,7 @@ function TermPage() {
             <section className="mt-10">
               <h2 className="font-display text-3xl">Key Facts</h2>
               <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-                {term.keyFacts.map((f, i) => (
+                {term.keyFacts.map((f: string, i: number) => (
                   <li
                     key={i}
                     className="rounded-2xl border border-border bg-card p-4 text-sm leading-relaxed"
@@ -278,7 +278,7 @@ function TermPage() {
             <section className="mt-10">
               <h2 className="font-display text-3xl">How It Works</h2>
               <ol className="mt-4 space-y-3">
-                {term.howItWorks.map((step, i) => (
+                {term.howItWorks.map((step: string, i: number) => (
                   <li
                     key={i}
                     className="flex gap-4 rounded-xl border border-border bg-card p-4"
@@ -302,7 +302,7 @@ function TermPage() {
                   <Check className="h-5 w-5 text-tc-finance" /> Advantages
                 </h3>
                 <ul className="mt-3 space-y-2 text-[15px]">
-                  {term.advantages.map((a, i) => (
+                  {term.advantages.map((a: string, i: number) => (
                     <li key={i} className="flex gap-2">
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-tc-finance" />
                       <span>{a}</span>
@@ -317,7 +317,7 @@ function TermPage() {
                     <X className="h-5 w-5 text-tc-crm" /> Disadvantages
                   </h3>
                   <ul className="mt-3 space-y-2 text-[15px]">
-                    {term.disadvantages.map((d, i) => (
+                    {term.disadvantages.map((d: string, i: number) => (
                       <li key={i} className="flex gap-2">
                         <X className="mt-0.5 h-4 w-4 shrink-0 text-tc-crm" />
                         <span>{d}</span>
@@ -332,7 +332,7 @@ function TermPage() {
             <section className="mt-10">
               <h2 className="font-display text-3xl">Common Mistakes</h2>
               <ul className="mt-4 space-y-2">
-                {term.commonMistakes.map((m, i) => (
+                {term.commonMistakes.map((m: string, i: number) => (
                   <li
                     key={i}
                     className="flex items-start gap-3 rounded-xl border border-border bg-card p-4"
@@ -351,7 +351,7 @@ function TermPage() {
             <section className="mt-10">
               <h2 className="font-display text-3xl">Frequently Asked Questions</h2>
               <div className="mt-4 space-y-3">
-                {term.faqs.map((f, i) => (
+                {term.faqs.map((f: { q: string; a: string }, i: number) => (
                   <details
                     key={i}
                     className="group rounded-2xl border border-border bg-card p-5 open:shadow-sm"
@@ -384,7 +384,7 @@ function TermPage() {
                   Hand-picked long-form guides that go beyond the definition.
                 </p>
                 <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                  {pillarArticles.map((a) => (
+                  {pillarArticles.map((a: any) => (
                     <Link
                       key={a.slug}
                       to={`/blog/${a.slug}`}
@@ -417,7 +417,7 @@ function TermPage() {
               <section className="mt-14">
                 <h2 className="font-display text-3xl">Related Terms</h2>
                 <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                  {related.map((r) => (
+                  {related.map((r: any) => (
                     <Link
                       key={r.slug}
                       to={termUrl(r.slug)}
@@ -441,7 +441,7 @@ function TermPage() {
               <section className="mt-14">
                 <h2 className="font-display text-3xl">Further Reading</h2>
                 <ul className="mt-4 space-y-2 text-[15px]">
-                  {term.furtherReading.map((r, i) => (
+                  {term.furtherReading!.map((r: { label: string; href: string }, i: number) => (
                     <li key={i}>
                       <Link
                         to={r.href}
@@ -493,7 +493,7 @@ function TermPage() {
                   Related terms
                 </div>
                 <ul className="space-y-2 text-sm">
-                  {related.map((r) => (
+                  {related.map((r: any) => (
                     <li key={r.slug}>
                       <Link
                         to={termUrl(r.slug)}
