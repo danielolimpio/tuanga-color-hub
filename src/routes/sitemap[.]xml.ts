@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { articles, categories } from "@/data/blog";
+import { glossaryTerms } from "@/data/glossary";
 
 const BASE_URL = "https://tuangacor.com";
 
@@ -11,6 +12,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/", priority: "1.0", changefreq: "daily" },
           { path: "/about", priority: "0.5", changefreq: "monthly" },
           { path: "/contact", priority: "0.5", changefreq: "monthly" },
+          { path: "/glossary", priority: "0.9", changefreq: "weekly" },
           ...categories.map((c) => ({
             path: `/category/${c.slug}`,
             priority: "0.8",
@@ -19,6 +21,12 @@ export const Route = createFileRoute("/sitemap.xml")({
           ...articles.map((a) => ({
             path: `/blog/${a.slug}`,
             lastmod: a.date,
+            priority: "0.7",
+            changefreq: "monthly",
+          })),
+          ...glossaryTerms.map((t) => ({
+            path: `/glossary/what-is-${t.slug}`,
+            lastmod: t.lastUpdated,
             priority: "0.7",
             changefreq: "monthly",
           })),

@@ -28,6 +28,7 @@ export function Header() {
               dot={c.hex}
             />
           ))}
+          <NavItem to="/glossary" label="Glossary" tagline="B2B SaaS Terms A–Z" />
         </nav>
 
         <div className="flex items-center gap-2">
@@ -61,6 +62,7 @@ export function Header() {
                 onClick={() => setOpen(false)}
               />
             ))}
+            <MobileItem to="/glossary" label="Glossary" tagline="B2B SaaS Terms A–Z" onClick={() => setOpen(false)} />
           </div>
         </div>
       )}

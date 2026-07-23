@@ -59,6 +59,7 @@ export function Footer() {
             <li><Link to="/about" className="hover:text-foreground">About</Link></li>
             <li><Link to="/contact" className="hover:text-foreground">Contact</Link></li>
             <li><Link to="/">Home</Link></li>
+            <li><Link to="/glossary" className="hover:text-foreground">Glossary</Link></li>
             <li><a href="/sitemap.xml" className="hover:text-foreground">XML Sitemap</a></li>
           </ul>
         </div>
