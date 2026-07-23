@@ -153,6 +153,46 @@ export const articles: Article[] = [
     editorsChoice: true,
     content: bodyFor("real-estate CRMs", ["CRM for real estate agents", "lead nurturing"]),
   },
+  {
+    slug: "hubspot-crm-review-for-small-business",
+    title: "HubSpot CRM Review: Is It the Best CRM for Small Business?",
+    excerpt:
+      "A hands-on HubSpot CRM review comparing it against Monday, Pipedrive, and Zoho for small business sales teams in 2026.",
+    category: "crm",
+    author: AUTHORS[1],
+    authorAvatar: AVATARS[1],
+    date: "2026-07-20",
+    readTime: 14,
+    cover: img("photo-1551288049-bebda4e38f71"),
+    views: 20450,
+    featured: true,
+    trending: true,
+    editorsChoice: true,
+    content: bodyFor("HubSpot CRM for small business", [
+      "best CRM for small business",
+      "HubSpot vs Monday vs Pipedrive",
+    ]),
+  },
+  {
+    slug: "monday-crm-vs-small-business-alternatives",
+    title: "Monday CRM vs Small Business Alternatives: Honest Comparison",
+    excerpt:
+      "Monday CRM stacked head-to-head with HubSpot, Pipedrive, and Zoho — pricing, onboarding, and which wins for SMBs.",
+    category: "crm",
+    author: AUTHORS[2],
+    authorAvatar: AVATARS[2],
+    date: "2026-07-18",
+    readTime: 12,
+    cover: img("photo-1454165804606-c3d57bc86b40"),
+    views: 17650,
+    trending: true,
+    content: bodyFor("Monday CRM vs alternatives", [
+      "best CRM for small business",
+      "Monday CRM review",
+    ]),
+  },
+
+
 
   // Marketing
   {
