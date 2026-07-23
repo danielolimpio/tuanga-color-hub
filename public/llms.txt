@@ -9,6 +9,7 @@ Tuanga Cor is an English-language blog dedicated to helping small and medium-siz
 - [Home](/): Latest B2B SaaS reviews, featured articles, and trending tools for small businesses.
 - [About](/about): Learn about Tuanga Cor, our mission, and how we help SMBs find the right software.
 - [Contact](/contact): Get in touch with the Tuanga Cor team for questions, partnerships, or feedback.
+- [Glossary](/glossary): A–Z glossary of B2B SaaS terms across CRM, marketing, finance, productivity, and e-commerce.
 
 ## Categories
 

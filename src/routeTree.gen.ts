@@ -13,6 +13,8 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GlossaryIndexRouteImport } from './routes/glossary.index'
+import { Route as GlossarySlugRouteImport } from './routes/glossary.$slug'
 import { Route as CategorySlugRouteImport } from './routes/category.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
@@ -36,6 +38,16 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GlossaryIndexRoute = GlossaryIndexRouteImport.update({
+  id: '/glossary/',
+  path: '/glossary/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlossarySlugRoute = GlossarySlugRouteImport.update({
+  id: '/glossary/$slug',
+  path: '/glossary/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CategorySlugRoute = CategorySlugRouteImport.update({
   id: '/category/$slug',
   path: '/category/$slug',
@@ -54,6 +66,8 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/category/$slug': typeof CategorySlugRoute
+  '/glossary/$slug': typeof GlossarySlugRoute
+  '/glossary/': typeof GlossaryIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +76,8 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/category/$slug': typeof CategorySlugRoute
+  '/glossary/$slug': typeof GlossarySlugRoute
+  '/glossary': typeof GlossaryIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +87,8 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/category/$slug': typeof CategorySlugRoute
+  '/glossary/$slug': typeof GlossarySlugRoute
+  '/glossary/': typeof GlossaryIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,6 +99,8 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/category/$slug'
+    | '/glossary/$slug'
+    | '/glossary/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -89,6 +109,8 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/category/$slug'
+    | '/glossary/$slug'
+    | '/glossary'
   id:
     | '__root__'
     | '/'
@@ -97,6 +119,8 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/category/$slug'
+    | '/glossary/$slug'
+    | '/glossary/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -106,6 +130,8 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   BlogSlugRoute: typeof BlogSlugRoute
   CategorySlugRoute: typeof CategorySlugRoute
+  GlossarySlugRoute: typeof GlossarySlugRoute
+  GlossaryIndexRoute: typeof GlossaryIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -138,6 +164,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/glossary/': {
+      id: '/glossary/'
+      path: '/glossary'
+      fullPath: '/glossary/'
+      preLoaderRoute: typeof GlossaryIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/glossary/$slug': {
+      id: '/glossary/$slug'
+      path: '/glossary/$slug'
+      fullPath: '/glossary/$slug'
+      preLoaderRoute: typeof GlossarySlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/category/$slug': {
       id: '/category/$slug'
       path: '/category/$slug'
@@ -162,6 +202,8 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   BlogSlugRoute: BlogSlugRoute,
   CategorySlugRoute: CategorySlugRoute,
+  GlossarySlugRoute: GlossarySlugRoute,
+  GlossaryIndexRoute: GlossaryIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

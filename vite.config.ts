@@ -28,13 +28,23 @@ const articleSlugs = [
   "payment-gateway-for-startups",
 ];
 
+const glossarySlugs = [
+  "crm", "sales-pipeline", "lead-nurturing", "sales-automation",
+  "marketing-automation", "email-marketing", "seo", "conversion-rate",
+  "accounting-software", "invoicing", "cash-flow", "payroll",
+  "project-management", "task-management", "remote-collaboration",
+  "ecommerce", "shopify", "payment-gateway",
+];
+
 const staticPages = [
   "/",
   "/about",
   "/contact",
+  "/glossary",
   "/sitemap.xml",
   ...categorySlugs.map((slug) => `/category/${slug}`),
   ...articleSlugs.map((slug) => `/blog/${slug}`),
+  ...glossarySlugs.map((slug) => `/glossary/what-is-${slug}`),
 ].map((path) => ({ path }));
 
 export default defineConfig({
