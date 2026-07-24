@@ -28,13 +28,8 @@ const articleSlugs = [
   "payment-gateway-for-startups",
 ];
 
-const glossarySlugs = [
-  "crm", "sales-pipeline", "lead-nurturing", "sales-automation",
-  "marketing-automation", "email-marketing", "seo", "conversion-rate",
-  "accounting-software", "invoicing", "cash-flow", "payroll",
-  "project-management", "task-management", "remote-collaboration",
-  "ecommerce", "shopify", "payment-gateway",
-];
+import { glossarySlugsAll } from "./src/data/glossary";
+const glossarySlugs = glossarySlugsAll;
 
 const staticPages = [
   "/",
