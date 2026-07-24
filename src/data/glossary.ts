@@ -43,6 +43,76 @@ const t = (
   ...p,
 });
 
+// Compact helper for long-tail terms — fills sensible defaults from a short brief.
+const tm = (o: {
+  slug: string;
+  term: string;
+  category: string;
+  short: string;
+  answer: string;
+  synonyms?: string[];
+  related?: string[];
+  trending?: boolean;
+  popular?: boolean;
+  keyFacts?: string[];
+  example?: string;
+  matters?: string;
+  how?: string[];
+  pros?: string[];
+  cons?: string[];
+  mistakes?: string[];
+  faqs?: { q: string; a: string }[];
+  furtherReading?: { label: string; href: string }[];
+}): GlossaryTerm =>
+  t({
+    slug: o.slug,
+    term: o.term,
+    category: o.category,
+    synonyms: o.synonyms,
+    short: o.short,
+    answer: o.answer,
+    definition: o.answer,
+    keyFacts:
+      o.keyFacts ?? [
+        `${o.term} is a core building block of modern SMB ${o.category} workflows.`,
+        `Most leading ${o.category} platforms support ${o.term.toLowerCase()} out of the box.`,
+        `Small teams typically see measurable ROI within the first 90 days.`,
+      ],
+    quickSummary: o.short,
+    practicalExample:
+      o.example ??
+      `A small business applies ${o.term.toLowerCase()} to standardize a repeatable process, measure outcomes, and free up team capacity for higher-value work.`,
+    whyItMatters:
+      o.matters ??
+      `Mastering ${o.term.toLowerCase()} helps small business owners make faster, data-informed decisions and avoid the operational bottlenecks that stall growth.`,
+    howItWorks:
+      o.how ?? [
+        `Define the specific outcome ${o.term.toLowerCase()} should drive.`,
+        `Pick a tool that fits your stack, team size, and budget.`,
+        `Pilot with a small group, measure the impact, then roll out.`,
+      ],
+    advantages:
+      o.pros ?? [
+        `Improves consistency across the team.`,
+        `Creates measurable, repeatable outcomes.`,
+        `Scales without adding headcount.`,
+      ],
+    disadvantages: o.cons,
+    commonMistakes:
+      o.mistakes ?? [
+        `Adopting the tool before defining the process.`,
+        `Skipping onboarding and change management.`,
+        `Ignoring analytics after launch.`,
+      ],
+    faqs: o.faqs ?? [
+      { q: `What is ${o.term} in simple terms?`, a: o.answer },
+    ],
+    related: o.related ?? [],
+    furtherReading: o.furtherReading,
+    trending: o.trending,
+    popular: o.popular,
+  });
+
 export const glossaryTerms: GlossaryTerm[] = [
   // -------- CRM --------
   t({
