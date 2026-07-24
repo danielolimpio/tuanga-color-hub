@@ -29,7 +29,6 @@ const articleSlugs = [
   "payment-gateway-for-startups",
 ];
 
-import { glossarySlugsAll } from "./src/data/glossary";
 const glossarySlugs = glossarySlugsAll;
 
 const staticPages = [
