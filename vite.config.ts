@@ -5,6 +5,7 @@
 //     React/TanStack dedupe, error logger plugins, and sandbox detection (port/host/strictPort).
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import { glossarySlugsAll } from "./src/data/glossary";
 
 const isHostingerStaticBuild = process.env.HOSTINGER_STATIC === "true";
 
@@ -28,13 +29,7 @@ const articleSlugs = [
   "payment-gateway-for-startups",
 ];
 
-const glossarySlugs = [
-  "crm", "sales-pipeline", "lead-nurturing", "sales-automation",
-  "marketing-automation", "email-marketing", "seo", "conversion-rate",
-  "accounting-software", "invoicing", "cash-flow", "payroll",
-  "project-management", "task-management", "remote-collaboration",
-  "ecommerce", "shopify", "payment-gateway",
-];
+const glossarySlugs = glossarySlugsAll;
 
 const staticPages = [
   "/",
